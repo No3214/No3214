@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/yo-avatar.png" alt="Yunuscan Oruk — YO monogram" width="160">
+<img src="assets/yo-avatar.png" alt="Yunuscan Oruk — YO monogram" width="72">
 
 # Yunuscan Oruk
 
@@ -12,12 +12,6 @@ Building tools that make sources, inputs, and limitations visible.
 
 ---
 
-## What I build
-
-I build practical tools around LLM workflows and developer infrastructure: read-only MCP integrations, vulnerability research, and explicit repository checks.
-
-My focus is narrow tools with inspectable outputs, reproducible examples, and clear failure modes. The projects below are early-stage; their documentation separates implemented behavior from unvalidated assumptions.
-
 ## Featured projects
 
 | Project | Use it for | Start here |
@@ -25,6 +19,8 @@ My focus is narrow tools with inspectable outputs, reproducible examples, and cl
 | **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Research package advisories through seven read-only MCP tools for OSV, NVD, CISA KEV, FIRST EPSS, and deps.dev. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
 | **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check JSON/TOML expectations across local repositories, offline, without running project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
 | **[Nöbetçi Eczane](https://github.com/No3214/nobetci-eczane)** | Explore a TypeScript / Next.js pharmacy-finder PWA prototype with maps and offline caching. Verify pharmacy information before travelling. | [Repository & setup](https://github.com/No3214/nobetci-eczane#readme) |
+
+These are early-stage projects. Their documentation distinguishes implemented behavior from unvalidated assumptions.
 
 ## Engineering focus
 
