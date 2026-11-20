@@ -17,7 +17,7 @@ I build tools for repository checks, source-aware research, and small-business r
 | Project | What you can do | Start here |
 | --- | --- | --- |
 | **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON/TOML expectations across local repositories, offline, without executing project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
-| **[Resource Ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and produce JSON or Markdown reports. | [Quickstart](https://github.com/No3214/resource-ledger#quickstart) · [Türkçe](https://github.com/No3214/resource-ledger/blob/main/README.tr.md) |
+| **[Resource Ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and produce JSON or Markdown reports. | [Quickstart](https://github.com/No3214/resource-ledger#quick-start) · [Türkçe](https://github.com/No3214/resource-ledger/blob/main/README.tr.md) |
 | **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Look up package advisories through read-only MCP tools and inspect their source context. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
 
 These are early-stage projects. Each repository documents its current behavior, setup, and limitations.
