@@ -3,46 +3,48 @@
 
 # Yunuscan Oruk
 
-**LLM tooling · Model Context Protocol · Python developer tools**
+**Practical open-source tools for developers and small teams.**
 
-Building tools that make sources, inputs, and limitations visible.
+I build tools for repository checks, source-aware research, and small-business records, with a focus on clear inputs, reproducible examples, and honest limits.
 
-[Explore MCP research](https://github.com/No3214/mcp-vulnerability-research) · [Check repository contracts](https://github.com/No3214/repo-contract-check)
+[Try a repository check](https://github.com/No3214/repo-contract-check#quickstart) · [Explore MCP research](https://github.com/No3214/mcp-vulnerability-research)
 </div>
 
 ---
 
-## Featured projects
+## Start with a small, repeatable task
 
-| Project | Use it for | Start here |
+| Project | What you can do | Start here |
 | --- | --- | --- |
-| **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Research package advisories through seven read-only MCP tools for OSV, NVD, CISA KEV, FIRST EPSS, and deps.dev. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
-| **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check JSON/TOML expectations across local repositories, offline, without running project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
-| **[Nöbetçi Eczane](https://github.com/No3214/nobetci-eczane)** | Explore a TypeScript / Next.js pharmacy-finder PWA prototype with maps and offline caching. Verify pharmacy information before travelling. | [Repository & setup](https://github.com/No3214/nobetci-eczane#readme) |
+| **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON/TOML expectations across local repositories, offline, without executing project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
+| **[Resource Ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and produce JSON or Markdown reports. | [Quickstart](https://github.com/No3214/resource-ledger#quickstart) · [Türkçe](https://github.com/No3214/resource-ledger/blob/main/README.tr.md) |
+| **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Look up package advisories through read-only MCP tools and inspect their source context. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
 
-These are early-stage projects. Their documentation distinguishes implemented behavior from unvalidated assumptions.
-
-## Engineering focus
-
-- **LLM integrations:** Model Context Protocol, structured tool inputs, source context.
-- **Python tooling:** explicit contracts, deterministic reports, testable failure paths.
-- **Research workflows:** advisory records, provenance, pagination, and provider limits.
-- **Product interfaces:** TypeScript and Next.js prototypes with clear operating boundaries.
+These are early-stage projects. Each repository documents its current behavior, setup, and limitations.
 
 ## How I work
 
-**Define the scope → build a small tool → test the failure paths → document the evidence.**
+**Define a narrow problem → build a usable example → test failure paths → document what was verified.**
 
-A source lookup is not a security verdict. A passing check proves only the configured expectations. Useful software should make those boundaries easy to inspect.
+A passing repository check verifies only its configured expectations. An advisory lookup provides source information, not a security verdict. Useful tools should make those boundaries easy to inspect.
+
+## Experiments
+
+**[Nöbetçi Eczane](https://github.com/No3214/nobetci-eczane)** explores a TypeScript / Next.js pharmacy-finder PWA with maps and offline caching. It is a prototype; verify pharmacy information before travelling. [Repository & setup](https://github.com/No3214/nobetci-eczane#readme).
 
 ## Feedback & collaboration
 
-The most useful feedback is a concrete task, the exact command or tool call, the expected result, and the actual result.
+A useful report includes your goal, the exact command or tool call, the expected result, and the actual result.
 
-- [MCP installation, bugs, and workflow feedback](https://github.com/No3214/mcp-vulnerability-research/issues)
 - [Repository-checking bugs and use cases](https://github.com/No3214/repo-contract-check/issues)
+- [Resource Ledger bugs and monthly-record workflows](https://github.com/No3214/resource-ledger/issues)
+- [MCP installation, bugs, and workflow feedback](https://github.com/No3214/mcp-vulnerability-research/issues)
 - For security reports, follow the relevant project's security policy.
 
 ---
 
-**Türkçe:** LLM araçları, MCP entegrasyonları ve Python geliştirici araçları üretiyorum. Açık kaynak projelerimde tekrar üretilebilir örnekler, kaynak görünürlüğü ve açık sınırlar üzerinde çalışıyorum. Geri bildirim için ilgili projenin issue bölümünü kullanabilirsiniz.
+## Türkçe
+
+İşletme ve yazılım çalışmalarında karşılaştığım sorunlar için küçük, kullanılabilir açık kaynak araçlar geliştiriyorum. Şu anki odağım, depolar arasında açık kuralları kontrol etmek, araştırma araçlarında kaynakları görünür tutmak ve küçük ekiplerin aylık kaynak tüketimi kayıtlarını denetlemek.
+
+Bir aracı kendi işinizde denediğinizde, ne yapmak istediğinizi ve nerede takıldığınızı ilgili projenin issue bölümünde paylaşabilirsiniz. Projelerin belgelerinde uygulanan davranışları, denenmemiş varsayımları ve kullanım sınırlarını ayrı tutuyorum.
