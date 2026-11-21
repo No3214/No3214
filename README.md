@@ -3,48 +3,55 @@
 
 # Yunuscan Oruk
 
-**Practical open-source tools for developers and small teams.**
+**Offline-first verification, security, and contract tooling for AI coding agents and MCP.**
 
-I build tools for repository checks, source-aware research, and small-business records, with a focus on clear inputs, reproducible examples, and honest limits.
+I build small, zero-bloat Python CLIs and read-only MCP servers focused on explicit contracts, deterministic failure paths, and honest limits.
 
-[Try a repository check](https://github.com/No3214/repo-contract-check#quickstart) · [Explore MCP research](https://github.com/No3214/mcp-vulnerability-research)
+[Repo Contract Check](https://github.com/No3214/repo-contract-check#quickstart) · [MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research) · [Resource Ledger](https://github.com/No3214/resource-ledger#quick-start)
 </div>
 
 ---
 
-## Start with a small, repeatable task
+## Active Public Tools
 
-| Project | What you can do | Start here |
+| Project | What it verifies or queries | Stack |
 | --- | --- | --- |
-| **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON/TOML expectations across local repositories, offline, without executing project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
-| **[Resource Ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and produce JSON or Markdown reports. | [Quickstart](https://github.com/No3214/resource-ledger#quick-start) · [Türkçe](https://github.com/No3214/resource-ledger/blob/main/README.tr.md) |
-| **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Look up package advisories through read-only MCP tools and inspect their source context. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
-
-These are early-stage projects. Each repository documents its current behavior, setup, and limitations.
-
-## How I work
-
-**Define a narrow problem → build a usable example → test failure paths → document what was verified.**
-
-A passing repository check verifies only its configured expectations. An advisory lookup provides source information, not a security verdict. Useful tools should make those boundaries easy to inspect.
-
-## Experiments
-
-**[Nöbetçi Eczane](https://github.com/No3214/nobetci-eczane)** explores a TypeScript / Next.js pharmacy-finder PWA with maps and offline caching. It is a prototype; verify pharmacy information before travelling. [Repository & setup](https://github.com/No3214/nobetci-eczane#readme).
-
-## Feedback & collaboration
-
-A useful report includes your goal, the exact command or tool call, the expected result, and the actual result.
-
-- [Repository-checking bugs and use cases](https://github.com/No3214/repo-contract-check/issues)
-- [Resource Ledger bugs and monthly-record workflows](https://github.com/No3214/resource-ledger/issues)
-- [MCP installation, bugs, and workflow feedback](https://github.com/No3214/mcp-vulnerability-research/issues)
-- For security reports, follow the relevant project's security policy.
+| **[mcp-vulnerability-research](https://github.com/No3214/mcp-vulnerability-research)** | Read-only MCP server querying OSV, NVD, CISA KEV, FIRST EPSS, and deps.dev across 7 tools with source context and explicit pagination. | Python 3.11+ · stdio MCP |
+| **[repo-contract-check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON and TOML expectations across local repositories offline without executing project commands. | Python 3.11+ stdlib · CLI |
+| **[resource-ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and generate JSON or Markdown reports. | Python 3.11+ stdlib · CLI |
 
 ---
 
-## Türkçe
+## Releasing Next: Offline Agent Harness Suite
 
-İşletme ve yazılım çalışmalarında karşılaştığım sorunlar için küçük, kullanılabilir açık kaynak araçlar geliştiriyorum. Şu anki odağım, depolar arasında açık kuralları kontrol etmek, araştırma araçlarında kaynakları görünür tutmak ve küçük ekiplerin aylık kaynak tüketimi kayıtlarını denetlemek.
+Locally verified zero-dependency Python 3.10+ tools staged for public `v0.1.0` repository and PyPI release (links will go live as each repository publishes):
 
-Bir aracı kendi işinizde denediğinizde, ne yapmak istediğinizi ve nerede takıldığınızı ilgili projenin issue bölümünde paylaşabilirsiniz. Projelerin belgelerinde uygulanan davranışları, denenmemiş varsayımları ve kullanım sınırlarını ayrı tutuyorum.
+| Stage | Tool | Scope & Verification Model | PyPI Package |
+| --- | --- | --- | --- |
+| Pre-execution | `mcp-guard` | Static scanner for MCP configs, exported tool schemas, and `SKILL.md`/`AGENTS.md` files: hidden Unicode/HTML injection, Lethal Trifecta risk, redacted secret detection, SHA-256 rug-pull lockfiles, context-budget token overhead, and SARIF 2.1.0. | `mcp-guard` *(staged)* |
+| Pre-merge | `agent-eval-gate` | Offline trajectory grading, prompt-injection Attack Success Rate (ASR) vs. utility pass rate, Wilson 95% confidence intervals, Rogan-Gladen judge calibration, baseline regression diffs, SARIF/JUnit output, and a path-contained MCP server. | `agent-eval-gate` *(staged)* |
+| Post-execution | `agent-receipt` | Cryptographic SHA-256 receipts binding command exit codes to exact git `HEAD`, working-tree hashes, test-file hashes (`--strict-tests`), optional HMAC-SHA256 signing, PR Markdown proof tables, and a read-only MCP server. | `agent-receipt-verify` *(staged)* |
+
+---
+
+## Engineering Principles
+
+**Narrow scope -> deterministic offline check -> test real failure modes -> state limits explicitly.**
+
+- A passing static config scan does not replace OS sandboxing or runtime isolation.
+- An eval gate checks recorded trajectories and calibrated judges, not open-ended human judgment.
+- A command receipt proves what exited `0` on which exact file tree, not semantic test strength.
+
+---
+
+## Civic Prototype
+
+- **[nobetci-eczane](https://github.com/No3214/nobetci-eczane)** — Turkish emergency pharmacy-finder PWA prototype with map routing and offline caching (Next.js / TypeScript). Verify official pharmacy listings before travelling.
+
+---
+
+## Feedback & Türkçe
+
+Bug reports and edge-case reproductions belong on each active repository's issue tracker with your goal, exact command or tool call, expected output, and actual output.
+
+Yapay zeka kodlama ajanları, Model Context Protocol (MCP) yapılandırmaları ve küçük ekipler için sıfır bağımlılıklı, çevrimdışı doğrulama ve güvenlik araçları geliştiriyorum. Her araç dar bir soruna odaklanır, hata durumlarını açıkça raporlar ve neleri doğrulayıp neleri doğrulamadığını şeffaf biçimde belgeler.
