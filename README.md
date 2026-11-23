@@ -3,48 +3,54 @@
 
 # Yunuscan Oruk
 
-**Practical open-source tools for developers and small teams.**
+**Verification, advisory provenance, and contract tooling for developers and MCP workflows.**
 
-I build tools for repository checks, source-aware research, and small-business records, with a focus on clear inputs, reproducible examples, and honest limits.
+I build small, deterministic Python CLIs and read-only Model Context Protocol (MCP) servers focused on explicit contracts, tested failure paths, and honest boundaries.
 
-[Try a repository check](https://github.com/No3214/repo-contract-check#quickstart) · [Explore MCP research](https://github.com/No3214/mcp-vulnerability-research)
+[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research) · [Repo Contract Check](https://github.com/No3214/repo-contract-check#quickstart) · [Resource Ledger](https://github.com/No3214/resource-ledger#quick-start)
 </div>
 
 ---
 
-## Start with a small, repeatable task
+## Active Open-Source Tools
 
-| Project | What you can do | Start here |
+| Project | What it verifies or queries | Runtime |
 | --- | --- | --- |
-| **[Repo Contract Check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON/TOML expectations across local repositories, offline, without executing project commands. | [Quickstart](https://github.com/No3214/repo-contract-check#quickstart) · [Examples](https://github.com/No3214/repo-contract-check/tree/main/examples) |
-| **[Resource Ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months visible, and produce JSON or Markdown reports. | [Quickstart](https://github.com/No3214/resource-ledger#quick-start) · [Türkçe](https://github.com/No3214/resource-ledger/blob/main/README.tr.md) |
-| **[MCP Vulnerability Research](https://github.com/No3214/mcp-vulnerability-research)** | Look up package advisories through read-only MCP tools and inspect their source context. | [Install](https://github.com/No3214/mcp-vulnerability-research#get-started) · [Usage](https://github.com/No3214/mcp-vulnerability-research/blob/main/docs/USAGE.md) |
+| **[mcp-vulnerability-research](https://github.com/No3214/mcp-vulnerability-research)** | Read-only stdio MCP server querying OSV, NVD, CISA KEV, FIRST EPSS, and deps.dev across 7 tools with source provenance, per-provider trust boundaries, and explicit pagination. | Python 3.11+ · stdio MCP |
+| **[repo-contract-check](https://github.com/No3214/repo-contract-check)** | Check explicit JSON and TOML expectations across local repositories offline without executing project code or leaking local paths into reports. | Python 3.11+ stdlib · CLI |
+| **[resource-ledger](https://github.com/No3214/resource-ledger)** | Validate monthly electricity, water, and waste CSV records offline, keep missing months explicit as null rather than zero, and emit deterministic JSON or Markdown reports. | Python 3.11+ stdlib · CLI |
 
-These are early-stage projects. Each repository documents its current behavior, setup, and limitations.
+Each repository documents its verified behavior, exact exit codes, and current scope limits.
 
-## How I work
+---
 
-**Define a narrow problem → build a usable example → test failure paths → document what was verified.**
+## How I Work
 
-A passing repository check verifies only its configured expectations. An advisory lookup provides source information, not a security verdict. Useful tools should make those boundaries easy to inspect.
+**Define a narrow contract → test failure and adversarial paths first → document what is and is not verified.**
 
-## Experiments
+- A passing repository contract check proves a declared manifest value or file exists, not that tests ran or a runtime is compatible.
+- An advisory lookup surfaces upstream OSV, NVD, KEV, EPSS, and deps.dev evidence, not an automated exploitability verdict.
+- A ledger report summarizes recorded measurements per unit without fabricating missing months or cross-unit totals.
 
-**[Nöbetçi Eczane](https://github.com/No3214/nobetci-eczane)** explores a TypeScript / Next.js pharmacy-finder PWA with maps and offline caching. It is a prototype; verify pharmacy information before travelling. [Repository & setup](https://github.com/No3214/nobetci-eczane#readme).
+---
 
-## Feedback & collaboration
+## Civic Prototype
 
-A useful report includes your goal, the exact command or tool call, the expected result, and the actual result.
+- **[nobetci-eczane](https://github.com/No3214/nobetci-eczane)** — Turkish on-duty pharmacy finder PWA prototype with map routing and offline caching (Next.js / TypeScript). Prototype only; always confirm official pharmacy duty listings before travelling.
 
-- [Repository-checking bugs and use cases](https://github.com/No3214/repo-contract-check/issues)
-- [Resource Ledger bugs and monthly-record workflows](https://github.com/No3214/resource-ledger/issues)
-- [MCP installation, bugs, and workflow feedback](https://github.com/No3214/mcp-vulnerability-research/issues)
-- For security reports, follow the relevant project's security policy.
+---
+
+## Feedback & Collaboration
+
+Bug reports and edge-case reproductions belong on each project's issue tracker with your goal, exact command or MCP tool call, expected output, and actual output:
+
+- [mcp-vulnerability-research issues](https://github.com/No3214/mcp-vulnerability-research/issues)
+- [repo-contract-check issues](https://github.com/No3214/repo-contract-check/issues)
+- [resource-ledger issues](https://github.com/No3214/resource-ledger/issues)
+- For security disclosures, follow each repository's `SECURITY.md` policy.
 
 ---
 
 ## Türkçe
 
-İşletme ve yazılım çalışmalarında karşılaştığım sorunlar için küçük, kullanılabilir açık kaynak araçlar geliştiriyorum. Şu anki odağım, depolar arasında açık kuralları kontrol etmek, araştırma araçlarında kaynakları görünür tutmak ve küçük ekiplerin aylık kaynak tüketimi kayıtlarını denetlemek.
-
-Bir aracı kendi işinizde denediğinizde, ne yapmak istediğinizi ve nerede takıldığınızı ilgili projenin issue bölümünde paylaşabilirsiniz. Projelerin belgelerinde uygulanan davranışları, denenmemiş varsayımları ve kullanım sınırlarını ayrı tutuyorum.
+Geliştiriciler, MCP iş akışları ve küçük ekipler için açık kuralları denetleyen, danışma kaynaklarını şeffaf tutan ve çevrimdışı çalışabilen araçlar geliştiriyorum. Her projenin belgelerinde doğrulanan davranışlar, hata çıkış kodları ve kapsam sınırları açıkça ayrılır.
